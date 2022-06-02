@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr>
+    {{/*嵌套了另外一个define的模版文件*/}}
+    {{template "u1.tmpl"}}
+    <hr>
+    {{template "o1.tmpl"}}
+<hr>
+{{.}}
+{{/*通过define定义一个o1模版*/}}
+
+    {{define "o1.tmpl"}}
+    <ol>
+        <li>吃饭</li>
+        <li>睡觉</li>
+        <li>长痘痘</li>
+    <ol>
+</body>   
+</html>

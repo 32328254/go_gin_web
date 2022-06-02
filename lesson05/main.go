@@ -18,7 +18,7 @@ func sayHello(w http.ResponseWriter, r *http.Request) {
 	//解析模版
 	t, err := template.ParseFiles("./hello.tmpl")
 	if err != nil {
-		fmt.Println("parse file failed,err:%v", err)
+		fmt.Printf("parse file failed,err:%v\n", err)
 		return
 	}
 
@@ -45,7 +45,7 @@ func sayHello(w http.ResponseWriter, r *http.Request) {
 	}
 	err = t.Execute(w, all1)
 	if err != nil {
-		fmt.Println("execute file failed,err:%v", err)
+		fmt.Printf("execute file failed,err:%v\n", err)
 		return
 	}
 }
@@ -54,7 +54,7 @@ func main() {
 	http.HandleFunc("/hello", sayHello)
 	err := http.ListenAndServe(":9090", nil)
 	if err != nil {
-		fmt.Println("start server failed,err:%v", err)
+		fmt.Printf("start server failed,err:%v\n", err)
 	}
 	return
 
